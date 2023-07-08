@@ -24,7 +24,9 @@ jobs:
       uses: ./.github/workflows/called-workflow.yml
       with:
         tf_plan_args: '[{"key":"test1","value":"${{ secrets.test1 }}"}]'
-
-
+  testing-workflow:
+    uses: ./.github/workflows/called-workflow.yml
+    with:
+      tf_plan_args: '[{"key":"test1","value":"${{ secrets.test1 }}"}]'
 
 
