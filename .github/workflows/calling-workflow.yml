@@ -10,6 +10,6 @@ jobs:
     uses: ./.github/workflows/called-workflow.yml
     secrets: inherit
     with:
-      tf_plan_args: "[{'key':'test1','value':${{ '${{secrets.test1}}' }} }]"
+      tf_plan_args: '[{"key":"test1","value":${{ "${{secrets.test1}}" }}}]'
 
 
