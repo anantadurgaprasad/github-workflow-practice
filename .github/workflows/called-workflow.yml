@@ -11,8 +11,6 @@ jobs:
   terraform-pr:
     runs-on: ubuntu-latest
     steps:
-    - name: checkout
-      uses: actions/checkout@sandbox
     - name: setup
       run: |
         for arg in $(echo '${{ inputs.tf_plan_args }}' | jq --raw-output '.[]| "-var=\"" + join("=") + "\""');do tfpa=$tfpa" $arg";done
