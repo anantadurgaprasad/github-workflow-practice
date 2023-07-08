@@ -11,15 +11,10 @@ jobs:
   terraform-pr:
     runs-on: ubuntu-latest
     steps:
-    - name: checkout source
-      uses: actions/checkout@master
-
     - name: setup
       run: |
         for arg in $(echo '${{ inputs.tf_plan_args }}' | jq --raw-output '.[]| "-var=\"" + join("=") + "\""');do tfpa=$tfpa" $arg";done
         echo "tf_plan_args=${tfpa}" >> $GITHUB_ENV
-
-
 
     - name: Testing
       id: plan
